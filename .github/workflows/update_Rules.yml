@@ -1,0 +1,59 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Update Rules CI
+
+# Controls when the workflow will run
+on:
+  schedule:
+    - cron:  '0 */12 * * *'
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+           
+      # Clone the repos that the hats updater is going to use
+      - name: pip install packages
+        run: |
+          pip install ruamel.yaml
+          pip install wget
+
+      - name: preproccess-Clash
+        run: |
+          rm -rf Clash/*
+          rm -rf ClassicRules/*
+          cp AppleRules/*.yaml ClassicRules/
+
+      - name: Run scripts-Clash
+        run: |
+          python clash.py
+
+      - name: preproccess-Surge
+        run: |
+          rm -rf Surge/*
+          rm -rf ClassicRules/*
+
+      - name: Run scripts-Surge
+        run: |
+          python surge.py
+
+
+      # Push and commit 
+      - name: Git commit & push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add . 
+          git diff --quiet && git diff --staged --quiet || git commit -am 'Updated rules'
+          git push
+         
