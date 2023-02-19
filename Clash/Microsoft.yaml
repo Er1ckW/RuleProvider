@@ -320,6 +320,7 @@ payload:
   - '+.microsoftadvertising.com'
   - '+.microsoftadvertisingregionalawards.com'
   - '+.microsoftaffiliates.com'
+  - '+.microsoftapp.net'
   - '+.microsoftazuread-sso.com'
   - '+.microsoftazurestatus.cn'
   - '+.microsoftcloud.com'
