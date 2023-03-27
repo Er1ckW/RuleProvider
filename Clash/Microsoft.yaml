@@ -323,6 +323,7 @@ payload:
   - '+.microsoftaffiliates.com'
   - '+.microsoftapp.net'
   - '+.microsoftazuread-sso.com'
+  - '+.microsoftazuresponsorships.com'
   - '+.microsoftazurestatus.cn'
   - '+.microsoftcloud.com'
   - '+.microsoftcloudsummit.com'
