@@ -543,6 +543,7 @@ payload:
   - '+.jibemobile.com'
   - '+.kaggle.com'
   - '+.kaggle.io'
+  - '+.kaggleusercontent.com'
   - '+.keyhole.com'
   - '+.keytransparency.com'
   - '+.keytransparency.foo'
