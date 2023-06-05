@@ -207,6 +207,8 @@ payload:
   - '+.feedburner.com'
   - '+.fflick.com'
   - '+.financeleadsonline.com'
+  - '+.firebase.com'
+  - '+.firebase.io'
   - '+.firebaseapp.com'
   - '+.firebaseio.com'
   - '+.flutter.dev'
