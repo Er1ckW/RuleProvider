@@ -1,4 +1,5 @@
 payload:
+  - '+.api.imem.app'
   - '+.api.swiftgram.app'
   - '+.comments.app'
   - '+.contest.com'
